@@ -1,0 +1,35 @@
+[project]
+name = "rnn"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { email = "341064398+dodookmung@users.noreply.github.com." }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "torch>=2.15.0",
+    "torchvision>=0.29.2",
+]
+
+[project.scripts]
+rnn = "rnn:main"
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+torchvision = { index = "pytorch" }
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu134"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "ipywidgets>=8.1.9",
+]
